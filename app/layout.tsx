@@ -24,7 +24,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} dark`}>
+    <html
+      lang="en"
+      className={`${geistSans.variable} ${geistMono.variable} dark`}
+    >
       <body className="antialiased">
         <div className="absolute inset-0 top-0 z-0">
           <LightRays
@@ -46,7 +49,7 @@ export default function RootLayout({
 
         <Navbar />
 
-        <main className="relative">{children}</main>
+        <main className="relative top-55 min-h-screen">{children}</main>
       </body>
     </html>
   );

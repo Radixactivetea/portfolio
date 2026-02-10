@@ -11,8 +11,10 @@ const Navbar = () => {
   // Initialize dark mode from localStorage or system preference
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    
+    const prefersDark = window.matchMedia(
+      "(prefers-color-scheme: dark)",
+    ).matches;
+
     if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
       setIsDarkMode(true);
       document.documentElement.classList.add("dark");
@@ -40,7 +42,11 @@ const Navbar = () => {
 
   return (
     <div className="fixed top-0 left-0 right-0 z-50 flex justify-center pt-6 px-4">
-      <nav className="bg-background backdrop-blur-lg border border-accent rounded-full shadow-lg px-2 py-1">
+      <div
+        className="absolute inset-0 backdrop-blur-xs
+             mask-[linear-gradient(to_bottom,black_40%,transparent)]"
+      ></div>
+      <nav className="z-10 bg-background border border-accent rounded-full shadow-lg px-2 py-1">
         <ul className="flex items-center gap-1">
           {/* Home Icon Link */}
           <li className="border-r border-neutral-700 pr-3 mr-2">
