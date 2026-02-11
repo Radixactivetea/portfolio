@@ -49,7 +49,7 @@ export default function RootLayout({
 
         <Navbar />
 
-        <main className="relative top-55 min-h-screen">{children}</main>
+        <main className="relative top-55">{children}</main>
       </body>
     </html>
   );

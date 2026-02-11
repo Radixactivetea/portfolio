@@ -1,4 +1,4 @@
-import portfolio from "@/data/portfolio.json"; // Adjust the path based on your project structure
+import portfolio from "@/data/portfolio.json";
 
 const HeroSection = () => {
   return (
