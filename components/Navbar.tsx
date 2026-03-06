@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { Home, Moon, Sun } from "lucide-react";
+import { CircleUserRound, Home, Moon, Sun } from "lucide-react";
 
 const Navbar = () => {
   const [activeTab, setActiveTab] = useState("home");
@@ -34,10 +34,10 @@ const Navbar = () => {
   };
 
   const navItems = [
-    { id: "about", label: "About", href: "/about" },
-    { id: "works", label: "Works", href: "/works" },
-    { id: "blog", label: "Blog", href: "/blog" },
-    { id: "contact", label: "Contact", href: "/contact" },
+    { id: "about", label: "About", href: "/about", icon: "" },
+    { id: "works", label: "Works", href: "/works", icon: "" },
+    { id: "blog", label: "Blog", href: "/blog", icon: "" },
+    { id: "contact", label: "Contact", href: "/contact", icon: "" },
   ];
 
   return (
@@ -88,6 +88,7 @@ const Navbar = () => {
                   <span className="absolute inset-0 bg-accent rounded-full border border-neutral-700 -z-10" />
                 )}
                 <span className="relative z-10">{item.label}</span>
+
               </Link>
             </li>
           ))}
