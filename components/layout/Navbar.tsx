@@ -46,7 +46,7 @@ const Navbar = () => {
         className="absolute inset-0 backdrop-blur-xs
              mask-[linear-gradient(to_bottom,black_40%,transparent)]"
       ></div>
-      <nav className="z-10 bg-background border border-accent rounded-full shadow-lg px-2 py-1">
+      <nav className="z-10 bg-background border border-accent rounded-4xl shadow-lg p-2">
         <ul className="flex items-center gap-1">
           {/* Home Icon Link */}
           <li className="border-r border-neutral-700 pr-3 mr-2">

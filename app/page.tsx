@@ -1,5 +1,5 @@
-import HeroSection from "@/components/HeroSection";
-import ButtonArrowAnimate from "@/components/ButtonArrowAnimate";
+import HeroSection from "@/components/layout/HeroSection";
+import ButtonArrowAnimate from "@/components/layout/ButtonArrowAnimate";
 
 const Home = () => {
   return (
