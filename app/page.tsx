@@ -1,5 +1,6 @@
 import HeroSection from "@/components/layout/HeroSection";
 import ButtonArrowAnimate from "@/components/layout/ButtonArrowAnimate";
+import ScrollFloat from "@/components/layout/ScrollFloat";
 
 const Home = () => {
   return (
@@ -9,6 +10,18 @@ const Home = () => {
       <div className="mx-auto">
         <ButtonArrowAnimate string="About Me" />
       </div>
+
+      <div className="h-100"></div>
+
+      <ScrollFloat
+        animationDuration={1}
+        ease='back.inOut(2)'
+        scrollStart='center bottom+=50%'
+        scrollEnd='bottom bottom-=40%'
+        stagger={0.03}
+      >
+        React Bits
+      </ScrollFloat>
     </div>
   );
 };

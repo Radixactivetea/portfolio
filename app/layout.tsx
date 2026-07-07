@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import LightRays from "@/components/layout/LightRays";
 import Navbar from "@/components/layout/Navbar";
+import DarkVeil from "@/components/layout/DarkVeil";
+import GlassNavbar from "@/components/layout/GlassNavbar";
+import ClockBadge from "@/components/layout/ClockBadge";
+import LocationBadge from "@/components/layout/LocationBadge";
+import SmoothScroll from "@/components/layout/SmoothScroll";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -29,27 +33,25 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} dark`}
     >
       <body className="antialiased">
-        <div className="absolute inset-0 top-0 z-0">
-          <LightRays
-            raysOrigin="top-center"
-            raysColor="#00D9FF"
-            raysSpeed={1}
-            lightSpread={0.5}
-            rayLength={3}
-            followMouse={true}
-            mouseInfluence={0.1}
-            noiseAmount={0}
-            distortion={0}
-            className="custom-rays"
-            pulsating={false}
-            fadeDistance={1}
-            saturation={1}
+        <div className="fixed inset-0 top-0 left-0 z-0 min-h-screen w-full">
+          <DarkVeil
+            hueShift={15}
+            noiseIntensity={0}
+            scanlineIntensity={0}
+            speed={0.9}
+            scanlineFrequency={0}
+            warpAmount={0}
           />
         </div>
 
-        <Navbar />
+        {/* <Navbar /> */}
+        <LocationBadge />
+        <GlassNavbar />
+        <ClockBadge />
 
-        <main className="relative top-55">{children}</main>
+        <SmoothScroll />
+
+        <main className="absolute top-55 w-full h-1000">{children}</main>
       </body>
     </html>
   );
