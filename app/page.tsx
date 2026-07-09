@@ -1,6 +1,6 @@
-import HeroSection from "@/components/layout/HeroSection";
-import ButtonArrowAnimate from "@/components/layout/ButtonArrowAnimate";
-import ScrollFloat from "@/components/layout/ScrollFloat";
+import HeroSection from "@/components/sections/HeroSection";
+import ButtonArrowAnimate from "@/components/effects/ButtonArrowAnimate";
+import ScrollFloat from "@/components/effects/ScrollFloat";
 
 const Home = () => {
   return (

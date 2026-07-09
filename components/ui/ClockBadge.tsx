@@ -2,8 +2,8 @@
 
 import React, { useEffect, useState } from 'react';
 import { Clock } from 'lucide-react';
-import GlassSurface from './GlassSurface';
-import { HEADER_HEIGHT } from './LocationBadge';
+import GlassSurface from '@/components/ui/GlassSurface';
+import { HEADER_HEIGHT } from '@/components/ui/LocationBadge';
 
 export default function ClockBadge() {
   // Start as null so server and first client render agree (both render the

@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/layout/Navbar";
-import DarkVeil from "@/components/layout/DarkVeil";
+import DarkVeil from "@/components/ui/DarkVeil";
 import GlassNavbar from "@/components/layout/GlassNavbar";
-import ClockBadge from "@/components/layout/ClockBadge";
-import LocationBadge from "@/components/layout/LocationBadge";
-import SmoothScroll from "@/components/layout/SmoothScroll";
+import ClockBadge from "@/components/ui/ClockBadge";
+import LocationBadge from "@/components/ui/LocationBadge";
+import SmoothScroll from "@/components/effects/SmoothScroll";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],

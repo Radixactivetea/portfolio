@@ -2,8 +2,8 @@
 
 import React, { useState } from 'react';
 import { Home, User, Briefcase, Image as ImageIcon } from 'lucide-react';
-import GlassSurface from './GlassSurface';
-import { HEADER_HEIGHT } from './LocationBadge';
+import GlassSurface from '@/components/ui/GlassSurface';
+import { HEADER_HEIGHT } from '@/components/ui/LocationBadge';
 
 interface NavItem {
   label: string;

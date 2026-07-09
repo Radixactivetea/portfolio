@@ -2,7 +2,7 @@
 
 import React, { useMemo } from 'react';
 import { MapPin } from 'lucide-react';
-import GlassSurface from './GlassSurface';
+import GlassSurface from '@/components/ui/GlassSurface';
 
 /** Shared with GlassNavbar.tsx and ClockBadge.tsx so all three pills line up. */
 export const HEADER_HEIGHT = 60;
