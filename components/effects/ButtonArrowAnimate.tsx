@@ -8,7 +8,7 @@ import {
 
 const ButtonArrowAnimate = ({ string }: { string: string }) => {
   return (
-    <CraftButton>
+    <CraftButton className="p-6">
       <CraftButtonLabel>{string}</CraftButtonLabel>
       <CraftButtonIcon>
         <ArrowUpRightIcon className="size-3 stroke-2 transition-transform duration-500 group-hover:rotate-45" />
