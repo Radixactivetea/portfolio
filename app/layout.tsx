@@ -6,6 +6,8 @@ import GlassNavbar from "@/components/layout/GlassNavbar";
 import ClockBadge from "@/components/ui/ClockBadge";
 import LocationBadge from "@/components/ui/LocationBadge";
 import SmoothScroll from "@/components/effects/SmoothScroll";
+import { LoadingProvider } from "@/components/providers/LoadingProvider";
+import PageLoader from "@/components/ui/PageLoader";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -32,26 +34,32 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} dark`}
     >
       <body className="antialiased">
-        <div className="fixed inset-0 top-0 left-0 z-0 min-h-screen w-full">
-          <DarkVeil
-            hueShift={15}
-            noiseIntensity={0}
-            scanlineIntensity={0}
-            speed={0.9}
-            scanlineFrequency={0}
-            warpAmount={0}
-          />
-        </div>
+        <LoadingProvider>
+          <SmoothScroll />
+          <PageLoader />
 
-        {/* <Navbar /> */}
-        <LocationBadge />
-        <GlassNavbar />
-        <ClockBadge />
+          <div className="fixed inset-0 top-0 left-0 z-0 min-h-screen w-full">
+            <DarkVeil
+              hueShift={15}
+              noiseIntensity={0}
+              scanlineIntensity={0}
+              speed={0.9}
+              scanlineFrequency={0}
+              warpAmount={0}
+            />
+          </div>
 
-        <SmoothScroll />
+          {/* <Navbar /> */}
+          <LocationBadge />
+          <GlassNavbar />
+          <ClockBadge />
 
-        <main className="absolute top-55 w-full h-1000">{children}</main>
+          
+
+          <main className="absolute top-55 w-full h-1000">{children}</main>
+        </LoadingProvider>
       </body>
+
     </html>
   );
 }
