@@ -8,6 +8,7 @@ import LocationBadge from "@/components/ui/LocationBadge";
 import SmoothScroll from "@/components/effects/SmoothScroll";
 import { LoadingProvider } from "@/components/providers/LoadingProvider";
 import PageLoader from "@/components/ui/PageLoader";
+import GradualBlur from "@/components/ui/GradualBlur";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -54,9 +55,19 @@ export default function RootLayout({
           <GlassNavbar />
           <ClockBadge />
 
-          
+
 
           <main className="absolute top-55 w-full h-1000">{children}</main>
+          <GradualBlur
+            target="page"
+            position="bottom"
+            height="7rem"
+            strength={2}
+            divCount={5}
+            curve="bezier"
+            exponential
+            opacity={1}
+          />
         </LoadingProvider>
       </body>
 
