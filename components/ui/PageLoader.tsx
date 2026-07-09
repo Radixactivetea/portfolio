@@ -5,7 +5,7 @@ import gsap from "gsap";
 import { useLoading } from "@/components/providers/LoadingProvider";
 import { getLenis } from "@/lib/lenis";
 
-const MIN_DISPLAY_TIME = 600; // ms — so it doesn't just flash if the page is already ready
+const MIN_DISPLAY_TIME = 100; // ms — so it doesn't just flash if the page is already ready
 
 const waitForImages = () => {
   const imgs = Array.from(document.images);
