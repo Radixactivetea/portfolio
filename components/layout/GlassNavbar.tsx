@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import React, { useState } from 'react';
 import { Home, User, Briefcase, Image as ImageIcon } from 'lucide-react';
