@@ -2,6 +2,23 @@ import HeroSection from "@/components/sections/HeroSection";
 import ButtonArrowAnimate from "@/components/effects/ButtonArrowAnimate";
 import ScrollFloat from "@/components/effects/ScrollFloat";
 import AnimatedContent from "@/components/ui/AnimatedContent";
+import Carousel from "@/components/ui/Carousel ";
+
+const featureProjects = [
+  {
+    src: "https://picsum.photos/1024/576",
+    alt: "Starlight AR Shop",
+    title: "Starlight Pottery AR Store",
+    description: "Starlight AR Shop integrates a simple AR feature for specific products, allowing users to visualize them in real-world environments.",
+    link: "/projects/mission-network",
+  },
+  {
+    src: "https://picsum.photos/1024/576",
+    alt: "Portfolio site",
+    title: "Portfolio Site",
+    description: "A Next.js portfolio with GSAP-driven entrance sequences and asset-based loading.",
+  }
+]
 
 const Home = () => {
   return (
@@ -18,11 +35,15 @@ const Home = () => {
         threshold={0.1}
         delay={0}
       >
-        <div className="flex flex-col gap-20 w-full">
+        <div className="flex flex-col gap-20 w-full items-center">
           <HeroSection />
-          <div className="mx-auto">
-            <ButtonArrowAnimate string="About Me" />
-          </div>
+
+          <ButtonArrowAnimate string="About Me" />
+
+          <Carousel
+            className="max-w-5xl max-h-144 mx-auto"
+            items={featureProjects}
+          />
         </div>
       </AnimatedContent>
 

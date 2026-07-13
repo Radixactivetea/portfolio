@@ -41,7 +41,7 @@ export default function RootLayout({
 
           <div className="fixed inset-0 top-0 left-0 z-0 min-h-screen w-full">
             <DarkVeil
-              hueShift={15}
+              hueShift={30}
               noiseIntensity={0}
               scanlineIntensity={0}
               speed={0.9}
