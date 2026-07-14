@@ -12,8 +12,15 @@ type CarouselItem = {
   link?: string;
 };
 
+type SharedDescription = {
+  title?: string;
+  description?: string;
+  link?: string;
+};
+
 type CarouselProps = {
   items: CarouselItem[];
+  sharedDescription?: SharedDescription; // NEW: when provided, this is used instead of per-slide title/description/link
   autoPlay?: boolean;
   autoPlayInterval?: number;
   showArrows?: boolean;
@@ -24,6 +31,7 @@ type CarouselProps = {
 
 const Carousel = ({
   items,
+  sharedDescription,
   autoPlay = false,
   autoPlayInterval = 4000,
   showArrows = true,
@@ -91,7 +99,8 @@ const Carousel = ({
     setDragOffset(0);
   };
 
-  const current = items[index];
+  // if sharedDescription is passed, it wins over per-slide fields — otherwise fall back to the current slide's own data
+  const activeText = sharedDescription ?? items[index];
 
   return (
     <div ref={containerRef} tabIndex={0} className={`w-full outline-none ${className}`}>
@@ -160,17 +169,17 @@ const Carousel = ({
         </div>
       )}
 
-      {(current?.title || current?.description) && (
+      {(activeText?.title || activeText?.description) && (
         <div className="mt-6 flex w-full gap-2 px-8">
-          {current.title && (
-            <h3 className="flex-1 text-xl font-semibold text-white">{current.title}</h3>
+          {activeText.title && (
+            <h3 className="flex-1 text-xl font-semibold text-white">{activeText.title}</h3>
           )}
-          {current.description && (
+          {activeText.description && (
             <div className="flex-1">
-              <p className="mb-1 text-sm text-white/60">{current.description}</p>
-              {current.link && (
+              <p className="mb-1 text-sm text-white/60">{activeText.description}</p>
+              {activeText.link && (
                 <a
-                  href={current.link}
+                  href={activeText.link}
                   className="text-sm text-[#82f1fc] transition-colors duration-300 hover:text-white"
                 >
                   Read case study →
