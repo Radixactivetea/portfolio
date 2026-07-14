@@ -88,16 +88,7 @@ type Project = {
 };
 
 // ---- Data -------------------------------------------------------------
-// `satisfies Project` (instead of `as const` alone) gives us BOTH:
-//   1. Compile-time validation against the Project shape (catches typos,
-//      missing fields, and extra/misplaced fields like the old `title`
-//      inside `architecture`).
-//   2. Literal type inference preserved on `project`, same as `as const`.
 
-// NOTE: a carousel implies more than one project. Switched `project` (single
-// object) to `projects` (array). If you genuinely only have one project right
-// now, this still works fine — it's just an array of length 1 — and it means
-// no rewrite is needed once you add project #2.
 export const projects = [
   {
     slug: "developer-portfolio",
