@@ -22,7 +22,7 @@ export default function ClockBadge() {
     : '--:--:--';
 
   return (
-    <div className="fixed top-0 right-0 z-50 pt-6 px-4 sm:px-6 pointer-events-none">
+    <div className="hidden lg:block fixed top-0 right-0 z-50 pt-6 px-4 sm:px-6 pointer-events-none">
       <div className="pointer-events-auto">
         <GlassSurface
           width="fit-content"

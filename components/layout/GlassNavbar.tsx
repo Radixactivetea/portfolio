@@ -53,7 +53,7 @@ export default function GlassNavbar() {
                     }`}
                 >
                   <Icon size={15} className={isActive ? 'opacity-100' : 'opacity-70'} />
-                  <span>{label}</span>
+                  <span className="hidden sm:block">{label}</span>
                 </a>
               );
             })}

@@ -42,7 +42,7 @@ const Home = () => {
           <ButtonArrowAnimate string="About Me" />
 
           <Carousel
-            className="max-w-5xl min-h-175 mx-auto"
+            className="max-w-5xl mx-auto"
             items={featureProjects}
           />
         </div>
