@@ -36,7 +36,7 @@ const Home = () => {
         <div className="flex flex-col gap-20 w-full items-center">
           <HeroSection />
 
-          <ButtonArrowAnimate string="About Me" />
+          <ButtonArrowAnimate string="About Me" href="/about"/>
 
           <Carousel
             className="max-w-5xl mx-auto"
