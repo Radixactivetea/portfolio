@@ -44,6 +44,7 @@ const AboutPreview = () => {
           src={aboutPreview.photo}
           alt={aboutPreview.photoAlt}
           fill
+          sizes="(max-width: 768px) 224px, 288px"
           className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
         />
       </div>
