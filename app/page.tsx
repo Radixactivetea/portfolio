@@ -3,6 +3,8 @@ import ButtonArrowAnimate from "@/components/effects/ButtonArrowAnimate";
 import ScrollFloat from "@/components/effects/ScrollFloat";
 import AnimatedContent from "@/components/ui/AnimatedContent";
 import Carousel from "@/components/ui/Carousel ";
+import AboutPreview from "@/components/sections/AboutPreview";
+import myPhoto from "@/data/portrait.jpg";
 
 const featureProjects = [
   {
@@ -41,13 +43,14 @@ const Home = () => {
           <ButtonArrowAnimate string="About Me" />
 
           <Carousel
-            className="max-w-5xl max-h-144 mx-auto"
+            className="max-w-5xl min-h-175 mx-auto"
             items={featureProjects}
           />
         </div>
       </AnimatedContent>
 
-      <div className="h-100"></div>
+      <AboutPreview photo={myPhoto} photoAlt="Sirajddn"/>
+
 
       <ScrollFloat
         animationDuration={1}
