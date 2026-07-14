@@ -1,16 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { useRef } from "react";
+import { aboutPreview } from "@/data/homePage";
 
-type AboutPreviewProps = {
-  photo: StaticImageData | string;
-  photoAlt?: string;
-};
-
-const AboutPreview = ({ photo, photoAlt = "Portrait photo" }: AboutPreviewProps) => {
+const AboutPreview = () => {
   const rootRef = useRef<HTMLAnchorElement>(null);
 
   return (
@@ -26,11 +22,11 @@ const AboutPreview = ({ photo, photoAlt = "Portrait photo" }: AboutPreviewProps)
         </span>
 
         <h2 className="mt-4 text-2xl md:text-3xl font-semibold text-white leading-snug">
-          I believe good software starts with understanding, not assumptions.
+          {aboutPreview.title}
         </h2>
 
         <p className="mt-4 max-w-md text-white/60">
-          My journey into software engineering began with curiosity. Coming from a civil engineering background, I taught myself programming by focusing on the fundamentals rather than shortcuts. Today, I enjoy designing maintainable systems, exploring how technologies work beneath the surface, and solving problems with thoughtful architecture instead of quick fixes. Whether I'm building web applications, backend services, or experimenting with new ideas, I'm always looking to understand the "why" before deciding on the "how."
+          {aboutPreview.description}
         </p>
 
         <div className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-white transition-transform duration-300 group-hover:translate-x-1">
@@ -45,8 +41,8 @@ const AboutPreview = ({ photo, photoAlt = "Portrait photo" }: AboutPreviewProps)
       {/* photo side */}
       <div className="order-1 md:order-2 relative h-56 w-56 md:h-72 md:w-72 shrink-0 overflow-hidden rounded-2xl">
         <Image
-          src={photo}
-          alt={photoAlt}
+          src={aboutPreview.photo}
+          alt={aboutPreview.photoAlt}
           fill
           className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
         />

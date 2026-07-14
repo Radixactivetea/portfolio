@@ -4,7 +4,6 @@ import ScrollFloat from "@/components/effects/ScrollFloat";
 import AnimatedContent from "@/components/ui/AnimatedContent";
 import Carousel from "@/components/ui/Carousel ";
 import AboutPreview from "@/components/sections/AboutPreview";
-import myPhoto from "@/data/portrait.jpg";
 
 const featureProjects = [
   {
@@ -49,7 +48,7 @@ const Home = () => {
         </div>
       </AnimatedContent>
 
-      <AboutPreview photo={myPhoto} photoAlt="Sirajddn"/>
+      <AboutPreview />
 
 
       <ScrollFloat
