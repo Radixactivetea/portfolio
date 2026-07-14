@@ -2,24 +2,21 @@ import HeroSection from "@/components/sections/HeroSection";
 import ButtonArrowAnimate from "@/components/effects/ButtonArrowAnimate";
 import ScrollFloat from "@/components/effects/ScrollFloat";
 import AnimatedContent from "@/components/ui/AnimatedContent";
-import Carousel from "@/components/ui/Carousel ";
+import Carousel, { CarouselItem } from "@/components/ui/Carousel ";
 import AboutPreview from "@/components/sections/AboutPreview";
+import { projects, Project } from "@/data/projects";
 
-const featureProjects = [
-  {
-    src: "https://picsum.photos/1024/576",
-    alt: "Starlight AR Shop",
-    title: "Starlight Pottery AR Store",
-    description: "Starlight AR Shop integrates a simple AR feature for specific products, allowing users to visualize them in real-world environments.",
-    link: "/projects/mission-network",
-  },
-  {
-    src: "https://picsum.photos/1024/576",
-    alt: "Portfolio site",
-    title: "Portfolio Site",
-    description: "A Next.js portfolio with GSAP-driven entrance sequences and asset-based loading.",
-  }
-]
+const projectHref = (slug: string) => `/projects/${slug}`;
+
+function toCarouselItems(projects: readonly Project[]): CarouselItem[] {
+  return projects.map((project) => ({
+    src: project.thumbnail,
+    alt: project.name,
+    title: project.name,
+    description: project.shortDescription,
+    link: projectHref(project.slug)
+  }));
+}
 
 const Home = () => {
   return (
@@ -43,7 +40,7 @@ const Home = () => {
 
           <Carousel
             className="max-w-5xl mx-auto"
-            items={featureProjects}
+            items={toCarouselItems(projects)}
           />
         </div>
       </AnimatedContent>

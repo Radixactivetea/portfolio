@@ -1,5 +1,5 @@
 import { StaticImageData } from "next/image";
-import myPhoto from "@/public/portrait.jpg";
+import myPhoto from "@/public/images/portrait.jpg";
 
 interface Hero {
   title: string;
