@@ -5,6 +5,7 @@ import AnimatedContent from "@/components/ui/AnimatedContent";
 import Carousel, { CarouselItem } from "@/components/ui/Carousel ";
 import AboutPreview from "@/components/sections/AboutPreview";
 import { projects, Project } from "@/data/projects";
+import WhatIDo from "@/components/sections/WhatIDo";
 
 const projectHref = (slug: string) => `/projects/${slug}`;
 
@@ -20,7 +21,7 @@ function toCarouselItems(projects: readonly Project[]): CarouselItem[] {
 
 const Home = () => {
   return (
-    <div className="flex flex-col gap-20 max-w-5xl w-full md:px-10 px-4 mx-auto">
+    <div className="flex flex-col gap-30 max-w-5xl w-full md:px-10 px-4 mx-auto">
       <AnimatedContent
         distance={100}
         direction="vertical"
@@ -47,16 +48,7 @@ const Home = () => {
 
       <AboutPreview />
 
-
-      <ScrollFloat
-        animationDuration={1}
-        ease='back.inOut(2)'
-        scrollStart='center bottom+=50%'
-        scrollEnd='bottom bottom-=40%'
-        stagger={0.03}
-      >
-        React Bits
-      </ScrollFloat>
+      <WhatIDo />
     </div>
   );
 };

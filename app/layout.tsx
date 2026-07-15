@@ -57,7 +57,7 @@ export default function RootLayout({
 
 
 
-          <main className="absolute top-55 w-full h-1000">{children}</main>
+          <main className="absolute top-55 w-full pb-100">{children}</main>
           <GradualBlur
             target="page"
             position="bottom"

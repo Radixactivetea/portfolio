@@ -1,19 +1,21 @@
 import { StaticImageData } from "next/image";
 import myPhoto from "@/public/images/portrait.jpg";
 
-interface Hero {
+interface TitleDescription {
   title: string;
   description: string;
 };
 
-interface AboutPreview {
-  title: string;
-  description: string;
+interface AboutPreview extends TitleDescription {
   photo: StaticImageData | string;
   photoAlt: string;
-};
+}
 
-export const heroData: Hero = {
+interface WhatIDo extends TitleDescription {
+  index: string;
+}
+
+export const heroData: TitleDescription = {
   title: "A Coder Lost in Curiosity",
   description: "I’m Sirajddn, a software engineer working in software web and game development. I care about understanding why things work not just making them work."
 };
@@ -24,3 +26,30 @@ export const aboutPreview: AboutPreview = {
   photo: myPhoto,
   photoAlt: "potrait photo"
 };
+
+export const whatIDo: WhatIDo[] = [
+  {
+    index: "01",
+    title: "Software Architecture",
+    description:
+      "Designing modular and scalable systems with clear separation of concerns, reusable components, and maintainable structures.",
+  },
+  {
+    index: "02",
+    title: "Full-Stack Engineering",
+    description:
+      "Developing end-to-end applications by connecting intuitive interfaces, robust APIs, and efficient data systems.",
+  },
+  {
+    index: "03",
+    title: "Backend Engineering",
+    description:
+      "Building reliable server-side logic, database structures, and services that support complex application requirements.",
+  },
+  {
+    index: "04",
+    title: "System Optimization",
+    description:
+      "Improving software reliability and performance through better architecture, efficient data handling, and problem analysis.",
+  },
+]
