@@ -9,6 +9,7 @@ import SmoothScroll from "@/components/effects/SmoothScroll";
 import { LoadingProvider } from "@/components/providers/LoadingProvider";
 import PageLoader from "@/components/ui/PageLoader";
 import GradualBlur from "@/components/ui/GradualBlur";
+import Footer from "@/components/layout/Footer";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -55,9 +56,11 @@ export default function RootLayout({
           <GlassNavbar />
           <ClockBadge />
 
+          <main className="absolute top-55 w-full pb-28">
+            {children}
+            <Footer />
+          </main>
 
-
-          <main className="absolute top-55 w-full pb-28">{children}</main>
           <GradualBlur
             target="page"
             position="bottom"
@@ -67,6 +70,7 @@ export default function RootLayout({
             curve="bezier"
             exponential
             opacity={1}
+            zIndex={80}
           />
         </LoadingProvider>
       </body>
