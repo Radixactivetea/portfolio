@@ -6,6 +6,8 @@ import Carousel, { CarouselItem } from "@/components/ui/Carousel ";
 import AboutPreview from "@/components/sections/AboutPreview";
 import { projects, Project } from "@/data/projects";
 import WhatIDo from "@/components/sections/WhatIDo";
+import Contact from "@/components/sections/Contact";
+import Footer from "@/components/layout/Footer";
 
 const projectHref = (slug: string) => `/projects/${slug}`;
 
@@ -37,7 +39,7 @@ const Home = () => {
         <div className="flex flex-col gap-20 w-full items-center">
           <HeroSection />
 
-          <ButtonArrowAnimate string="About Me" href="/about"/>
+          <ButtonArrowAnimate string="About Me" href="/about" />
 
           <Carousel
             className="max-w-5xl mx-auto"
@@ -49,6 +51,8 @@ const Home = () => {
       <AboutPreview />
 
       <WhatIDo />
+
+      <Contact />
     </div>
   );
 };
