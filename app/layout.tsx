@@ -56,8 +56,10 @@ export default function RootLayout({
           <GlassNavbar />
           <ClockBadge />
 
-          <main className="absolute top-55 w-full pb-28">
-            {children}
+          <main className="relative w-full min-h-screen">
+            <div className="py-55">
+              {children}
+            </div>
             <Footer />
           </main>
 
